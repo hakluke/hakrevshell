@@ -13,12 +13,17 @@ import (
 
 func main() {
 	host := flag.String("h", "", "the host:ip to connect back to, e.g. 192.168.0.15:1337")
+	udp := flag.Bool("udp", false, "use UDP instead of the default TCP")
 	flag.Parse()
 
-	//hostSplit := strings.Split(*host, ":")
+	// set the protocol
+	protocol := "tcp"
+	if *udp {
+		protocol = "udp"
+	}
 
 	// connect to the host
-	conn, err := net.Dial("udp", *host)
+	conn, err := net.Dial(protocol, *host)
 
 	if err != nil {
 		log.Fatal("Connection failed.")
