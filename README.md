@@ -1,5 +1,5 @@
 # hakrevshell
-A golang reverse shell utility
+A tool for easily generating reverse/bind shells via tcp/udp on your system. Check out the binaries folder for pre-compiled binaries for many different systems.
 
 ## Usage
 
